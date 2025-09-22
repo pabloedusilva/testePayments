@@ -7,7 +7,7 @@
 
 .payment-container {
   box-sizing: border-box;
-  width: clamp(320px, 98vw, 1500px);
+  width: clamp(320px, 99.5vw, 1800px);
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -32,17 +32,17 @@ body.payment-page .desktop-profile-menu { display:none !important; }
 
 .payment-card {
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-  padding: 18px 18px 10px;
+  border-radius: 8px; /* thinner corners */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  padding: 12px 12px 8px; /* tighter padding to ampliar a área útil do iframe */
 }
 .payment-info { color: #666; font-size: .92rem; margin-bottom: 10px; text-align: center; }
 
-.payment-frame { border-radius: 10px; overflow: hidden; border: 1px solid #eee; background: #fafafa; }
+.payment-frame { border-radius: 8px; overflow: hidden; border: 0.5px solid #f0f0f0; background: #fafafa; }
 .payment-frame iframe {
   display: block;
   width: 100%;
-  height: clamp(680px, 94dvh, 1400px);
+  height: clamp(820px, 98dvh, 1800px);
   border: 0;
   background: #fff;
 }
@@ -53,10 +53,19 @@ body.payment-page .desktop-profile-menu { display:none !important; }
 
 @media (max-width: 820px) {
   .payment { margin-top: 85px; }
-  .payment-card { border-radius: 10px; }
+  /* Mantém respiro nas bordas e cartão arredondado */
+  .payment-container { width: 100%; padding: 0 14px; margin: 0 auto; }
+  .payment-card { border-radius: 8px; box-shadow: 0 6px 18px rgba(0,0,0,0.05); padding: 12px 12px 8px; }
+  .payment-frame { border-radius: 8px; border: 0.5px solid #f0f0f0; }
+  .payment-frame iframe { height: 94dvh; }
 }
 
 @media (max-width: 480px) {
+  /* Ajustes finos para smartphones bem pequenos, com respiro nas laterais */
   .payment-container { padding: 0 12px; }
-  .payment-frame iframe { height: 90dvh; }
+  .payment-topbar { padding: 0 4px; }
+  .payment-title { padding: 0 4px; }
+  .payment-card { border-radius: 8px; }
+  .payment-frame { border-radius: 8px; }
+  .payment-frame iframe { height: 94dvh; }
 }
