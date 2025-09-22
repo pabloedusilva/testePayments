@@ -7,7 +7,7 @@
 
 .payment-container {
   box-sizing: border-box;
-  width: min(98vw, 1400px);
+  width: clamp(320px, 98vw, 1500px);
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -42,7 +42,7 @@ body.payment-page .desktop-profile-menu { display:none !important; }
 .payment-frame iframe {
   display: block;
   width: 100%;
-  height: min(92vh, 1100px);
+  height: clamp(680px, 94dvh, 1400px);
   border: 0;
   background: #fff;
 }
@@ -54,4 +54,9 @@ body.payment-page .desktop-profile-menu { display:none !important; }
 @media (max-width: 820px) {
   .payment { margin-top: 85px; }
   .payment-card { border-radius: 10px; }
+}
+
+@media (max-width: 480px) {
+  .payment-container { padding: 0 12px; }
+  .payment-frame iframe { height: 90dvh; }
 }
