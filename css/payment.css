@@ -6,7 +6,8 @@
 }
 
 .payment-container {
-  width: min(94vw, 1100px);
+  box-sizing: border-box;
+  width: min(98vw, 1400px);
   margin: 0 auto;
   padding: 0 20px;
 }
